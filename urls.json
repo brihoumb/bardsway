@@ -1,10 +1,10 @@
 {
-  "bards_way": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/bards_way",
-  "bards_way.sum": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/bards_way.sum",
-  "bards_way.exe": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/bards_way.exe",
-  "bards_way.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/bards_way.exe.sum",
-  "sample_randomiser": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/sample_randomiser",
-  "sample_randomiser.sum": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/sample_randomiser.sum",
-  "sample_randomiser.exe": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/sample_randomiser.exe",
-  "sample_randomiser.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta1.0/sample_randomiser.exe.sum"
+  "bards_way": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way",
+  "bards_way.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.sum",
+  "bards_way.exe": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.exe",
+  "bards_way.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.exe.sum",
+  "sample_randomiser": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser",
+  "sample_randomiser.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.sum",
+  "sample_randomiser.exe": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.exe",
+  "sample_randomiser.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.exe.sum"
 }
