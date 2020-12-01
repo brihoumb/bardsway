@@ -1,10 +1,8 @@
 {
-  "bards_way": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way",
-  "bards_way.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.sum",
-  "bards_way.exe": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.exe",
-  "bards_way.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/bards_way.exe.sum",
-  "sample_randomiser": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser",
-  "sample_randomiser.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.sum",
-  "sample_randomiser.exe": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.exe",
-  "sample_randomiser.exe.sum": "https://github.com/brihoumb/bardsway/releases/download/beta2.0/sample_randomiser.exe.sum"
+  "bardsway": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/bardsway",
+  "bardsway.exe": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/bardsway.exe",
+  "ffmpeg_linux.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/ffmpeg_linux.zip",
+  "ffmpeg_window.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/ffmpeg_windows.zip",
+  "spleeter_model.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/spleeter_model.zip",
+  "note_recognition_model.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/note_recognition_model.zip",
 }
