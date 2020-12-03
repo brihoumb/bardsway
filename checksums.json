@@ -1,8 +1,18 @@
 {
-  "bards_way": "1a28ac12ee86e4a3d0ebc1084539a816",
-  "bards_way.exe": "f7c13bf656c65b7c85d40c335b806d9e",
+  "sciter.dll": "c8b57742f2e7b24c66baab5ad764f71f",
+  "libsciter-gtk.so": "d152f5f9b04f4d05152bcc9e734ac9cf",
+  "bardsway_linux.zip": "",
+  "bardsway_windows.zip": "",
   "ffmpeg_linux.zip": "0b7b2339b8bf3f9204ebc2078a40d4f2",
   "ffmpeg_windows.zip": "8d28f4f28a2cf0895c7fb4ee77a3c409",
-  "spleeter_model.zip": "36a5682efbcb5b9dd1f6bf3258891d56",
-  "note_recognition_model.zip": "ec869a72041538ad4c84e79f1e9147e6",
+  "spleeter_model.zip": "9ce1956ffd375545e3a71f362d8f6805",
+  "note_recognition_model.zip": "50a8e7a0090c0bc8407545ac75a2f0c6",
+  "pretrained_models": "817a848016be113e4be7d09effe475a3",
+  "note_recognition_model": "d39abdac7eff6e8180dfeb233b2ddb1f",
+  "threshold.p": "b2e1af6e370eb0501eebeff8756379e6",
+  "5stems.json": "b6a9d7892fed32ed1799a545eb294131",
+  "ffmpeg_folder_linux": "724832bcc022c0c2c4c9eae82c47c6f8",
+  "ffmpeg_folder_windows": "83a5c1f82dd83e696ba300e3fd89bb92",
+  "libs_windows": "",
+  "libs_linux": ""
 }
