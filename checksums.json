@@ -1,8 +1,8 @@
 {
   "sciter.dll": "c8b57742f2e7b24c66baab5ad764f71f",
   "libsciter-gtk.so": "d152f5f9b04f4d05152bcc9e734ac9cf",
-  "bardsway_linux.zip": "76ebcebd615b6edae9bec0a0e0e98506",
-  "bardsway_windows.zip": "678fc4b4892de2a21913e3738b24e1bf",
+  "bardsway_linux.zip": "01582941f7c64c4148bc4bb545bfa54b",
+  "bardsway_windows.zip": "b45344966d61d7f97878ec33dc53631c",
   "ffmpeg_linux.zip": "0b7b2339b8bf3f9204ebc2078a40d4f2",
   "ffmpeg_windows.zip": "8d28f4f28a2cf0895c7fb4ee77a3c409",
   "spleeter_model.zip": "9ce1956ffd375545e3a71f362d8f6805",
@@ -13,6 +13,10 @@
   "5stems.json": "b6a9d7892fed32ed1799a545eb294131",
   "ffmpeg_folder_linux": "724832bcc022c0c2c4c9eae82c47c6f8",
   "ffmpeg_folder_windows": "83a5c1f82dd83e696ba300e3fd89bb92",
-  "libs_windows": "535a1e9905cc6e9c3e66e69c68b1a34d",
-  "libs_linux": "535a1e9905cc6e9c3e66e69c68b1a34d"
+  "libs_windows": "31c5a0c18b14e2eae50a7f482005be84",
+  "libs_linux": "e6fb7ca30c6e54b392d33406d61c2430",
+  "installer_linux": "ef07136c908c1646fc54f59d151cb084",
+  "installer_linux.zip": "ef1b951cbedf89addf37970ede915722",
+  "installer_windows.zip": "02f184b8f9ce722185d52d03f6f08e3e",
+  "installer_windows": "762f60daad3f2293c98078366c841ac9"
 }
