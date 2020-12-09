@@ -15,8 +15,8 @@
   "ffmpeg_folder_windows": "83a5c1f82dd83e696ba300e3fd89bb92",
   "libs_windows": "31c5a0c18b14e2eae50a7f482005be84",
   "libs_linux": "e6fb7ca30c6e54b392d33406d61c2430",
-  "installer_linux": "ef07136c908c1646fc54f59d151cb084",
-  "installer_linux.zip": "ef1b951cbedf89addf37970ede915722",
-  "installer_windows.zip": "02f184b8f9ce722185d52d03f6f08e3e",
-  "installer_windows": "762f60daad3f2293c98078366c841ac9"
+  "installer_linux": "e617fcad04c2512766ea19cd525f1df2",
+  "installer_linux.zip": "8ebd99efad6b753b966af4450da998f1",
+  "installer_windows.zip": "739bd10d3ca9cb4af5dea36150bdff4a",
+  "installer_windows": "fbf0863b280e01fdbcdf2644e671c5fd"
 }
