@@ -8,15 +8,15 @@
   "ffmpeg_folder_linux": "724832bcc022c0c2c4c9eae82c47c6f8",
   "ffmpeg_linux.zip": "0b7b2339b8bf3f9204ebc2078a40d4f2",
   "ffmpeg_folder_windows": "83a5c1f82dd83e696ba300e3fd89bb92",
-  "ffmpeg_windows.zip": "8d28f4f28a2cf0895c7fb4ee77a3c409",
+  "ffmpeg_window.zip": "8d28f4f28a2cf0895c7fb4ee77a3c409",
   "spleeter_model.zip": "9ce1956ffd375545e3a71f362d8f6805",
   "threshold.p": "b2e1af6e370eb0501eebeff8756379e6",
   "note_recognition_model": "d39abdac7eff6e8180dfeb233b2ddb1f",
   "note_recognition_model.zip": "50a8e7a0090c0bc8407545ac75a2f0c6",
   "pretrained_models": "817a848016be113e4be7d09effe475a3",
   "5stems.json": "b6a9d7892fed32ed1799a545eb294131",
-  "installer_linux": "88ae66c0b7262743e843c13bce75ef2a",
-  "installer_linux.zip": "835e8f2f90245e0907e4b7e211d16a61",
-  "installer_windows.zip": "3c2ce0ea54a50976cdd378ab533be2d4",
-  "installer_windows": "b1afb5e408350407006cbdc3b32aee8e"
+  "installer_linux": "",
+  "installer_linux.zip": "",
+  "installer_windows.zip": "",
+  "installer_windows": ""
 }
