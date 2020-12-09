@@ -1,0 +1,10 @@
+{
+  "sciter.dll": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/sciter.dll",
+  "libsciter-gtk.so": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/libsciter-gtk.so",
+  "ffmpeg_linux.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/ffmpeg_linux.zip",
+  "ffmpeg_window.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/ffmpeg_windows.zip",
+  "spleeter_model.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/spleeter_model.zip",
+  "bardsway_linux.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/bardsway_linux.zip",
+  "bardsway_windows.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/bardsway_windows.zip",
+  "note_recognition_model.zip": "https://github.com/brihoumb/bardsway/releases/download/1.0.0/note_recognition_model.zip"
+}
