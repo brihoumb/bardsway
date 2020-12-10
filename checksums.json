@@ -1,10 +1,10 @@
 {
   "sciter.dll": "c8b57742f2e7b24c66baab5ad764f71f",
   "libsciter-gtk.so": "d152f5f9b04f4d05152bcc9e734ac9cf",
-  "libs_linux": "fc76573d3d591e82cc566c50f4196404",
-  "bardsway_linux.zip": "faf69c07a933ccffc6aba8d598df1665",
-  "libs_windows": "5212f77cd62df8fcc438a829fe0ec6e4",
-  "bardsway_windows.zip": "0f392c6b4b5f89c4fe49574b31d8d7f4",
+  "libs_linux": "7d167c198925a7bea13a0054bf650d1a",
+  "bardsway_linux.zip": "c0e0e446be4cfb6c7f3a0cbc388ad0bb",
+  "libs_windows": "dc0d2b6c6e9d8045de4b71eb5862c9ba",
+  "bardsway_windows.zip": "c26b87c7899d08dff3c28c56e3da3ae9",
   "ffmpeg_folder_linux": "724832bcc022c0c2c4c9eae82c47c6f8",
   "ffmpeg_linux.zip": "0b7b2339b8bf3f9204ebc2078a40d4f2",
   "ffmpeg_folder_windows": "83a5c1f82dd83e696ba300e3fd89bb92",
@@ -15,8 +15,8 @@
   "note_recognition_model.zip": "50a8e7a0090c0bc8407545ac75a2f0c6",
   "pretrained_models": "817a848016be113e4be7d09effe475a3",
   "5stems.json": "b6a9d7892fed32ed1799a545eb294131",
-  "installer_linux": "",
-  "installer_linux.zip": "",
-  "installer_windows.zip": "",
-  "installer_windows": ""
+  "installer_linux": "a1c3de545280ae2800ae2cca801e3cf2",
+  "installer_linux.zip": "0d8a1380ad61d33104c72d8321d3ba2f",
+  "installer_windows.zip": "f99a208750f96ff49008244d7d22f4c6",
+  "installer_windows": "dba85fa7d6a518fe4d3d1bb3c4be7176"
 }
