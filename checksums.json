@@ -15,8 +15,8 @@
   "note_recognition_model.zip": "554dba42605824d59a101036acf91c58",
   "pretrained_models": "817a848016be113e4be7d09effe475a3",
   "5stems.json": "b6a9d7892fed32ed1799a545eb294131",
-  "installer_linux": "c9c5350c6c18c031d2e2eb12b67e8a4b",
-  "installer_linux.zip": "1a30253cf223e33ccd06f1ad0f834f8c",
-  "installer_windows.zip": "83cafa039c31be5d555eadc8c632ff4d",
-  "installer_windows": "3fe50444f5ca12b4df00b848cf1490c1"
+  "installer_linux": "cf9d084093341b12e835f6a18f12546e",
+  "installer_linux.zip": "4bb3ca41f3845eb426a783d7a2c2280f",
+  "installer_windows.zip": "33fb50a205cf2c28749d4fc6aa500421",
+  "installer_windows": "2f46ea64e281efd5917181dbda8c5d8f"
 }
