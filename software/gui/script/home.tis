@@ -1,0 +1,91 @@
+let path = '';
+let folder = '';
+let started = false;
+let verified = false;
+
+event click $(#loadWav) {
+  if (!verified) {
+    if (!test_valid_account())
+      return;
+  }
+  if (started) {
+    return;
+  }
+  folder = view.selectFile(#loadWav, 'WAV Files (*.wav)|*.WAV;*.wav|*.*', 'wav');
+  if (folder != '' && folder != undefined && verified) {
+    folder = URL.decode(URL.toPath(folder));
+    path = folder;
+    $(#pathWav).text = folder.split(/[\\\/]/).pop();
+    $(#loadWavPic).attributes['src'] = '../resources/file_bk.png';
+    $(#launchPic).attributes['src'] = '../resources/rocket_bl.png';
+    $(#launch).style['color'] = '#43BCB5';
+    $(#loadWav).style['color'] = '#2B2B2B';
+  }
+  folder = path;
+}
+
+const update_ui = () => {
+  $(#launch).style['color'] = '#43BCB5';
+  $(#loadWav).style['color'] = '#2B2B2B';
+  $(#pathWav).style['visibility'] = 'hidden';
+  $(#loadWavPic).attributes['src'] = '../resources/file_bk.png';
+  $(#launchPic).attributes['src'] = '../resources/rocket_bl.png';
+}
+
+event click $(#launch) {
+  if (!verified) {
+    test_valid_account();
+  }
+  if (started) {
+    return;
+  }
+  if (folder != '' && folder != undefined && verified) {
+    path = folder;
+    $(#outSpleeter).clear();
+    $(#outEmul).clear();
+    $(#outError).clear();
+    started = view.hasStarted(true);
+    $(#pathWav).style['visibility'] = 'hidden';
+    view.startBardsway(folder);
+  }
+  folder = path;
+}
+
+event complete() {
+  if (!view.isLoaded()) {
+    view.minSize = (1024, 576);
+    view.maxSize = (1920, 1080);
+    view.windowAspectRatio = 16.0/9.0;
+    let (x,y,w,h) = view.box(#rectw,#client,#screen);
+    view.move(x, y, 1024, 576, true);
+    view.isLoaded(true);
+  }
+  test_valid_account();
+  started = view.hasStarted();
+  if (started) {
+    update_ui();
+  }
+  self.timer(1s, () => {
+    started = view.hasStarted();
+    if (started) {
+      view.editPage();
+    }
+    return true
+  });
+}
+
+function test_valid_account() {
+  const configCredentials = view.loadCredentials();
+  if (configCredentials.email != "" && configCredentials.password != "") {
+    let expiration = view.getExpiration();
+    if (expiration != 'Unauthorized' && expiration > (Math.round((new Date().valueOf())/1000.0)+3600)) {
+      verified = true;
+      return;
+    } else if (expiration != 'Unauthorized' && expiration <= (Math.round((new Date().valueOf())/1000.0)+3600)) {
+      verified = request_key();
+      return;
+    }
+  }
+  verified = login();
+  return verified;
+}

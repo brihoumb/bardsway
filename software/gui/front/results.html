@@ -1,0 +1,43 @@
+<html window-icon="../resources/icon.png" window-resizable>
+    <head>
+        <title>Bard's Way</title>
+        <link rel="stylesheet" href="../style/main.css">
+        <link rel="stylesheet" href="../style/sidebar.css">
+        <link rel="stylesheet" href="../style/results.css">
+    </head>
+    <body>
+        <div class="sidenav">
+            <a href="#">
+                <img src="../resources/logo.png" class="logo" alt="nav_logo"/>
+            </a>
+            <a href="./home.html" #home class="inactive">
+                <img src="../resources/music_w.svg" alt="accueil"/>
+                <br/>ANALYSIS
+            </a>
+            <a href="#" #results class="active">
+                <img src="../resources/check_b.svg" alt="resultats"/>
+                <br/>RESULTS
+            </a>
+            <a href="./options.html" #options class="inactive" class="last">
+                <img src="../resources/gear_w.svg" alt="options"/>
+                <br/>OPTIONS
+            </a>
+        </div>
+        <div id="main">
+            <div id="analysisList"></div>
+
+            <!--div id="pdfLoader">
+                <figcaption>Piano Partition</figcaption>
+                <img src="../resources/partition.png" alt="pdf1" class="pdf" width="90%"/>
+                <figcaption>Drums Partition</figcaption>
+                <img src="../resources/partition.png" alt="pdf1" class="pdf" width="90%"/>
+            </div-->
+
+            <div class="liner horizontal">
+                <div id="wavLoader"></div>
+            </div>
+            <div class="liner vertical"></div>
+            <script type="text/tiscript" src="../script/results.tis"></script>
+        </div>
+    </body>
+</html>

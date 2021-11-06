@@ -1,0 +1,29 @@
+<script type="text/html" #login-box-content>
+    <style>
+        form { flow:row(label,input); border-spacing:10dip; }
+        form > * { vertical-align:baseline; }
+        form > label { horizontal-align:right; }
+    </style>
+    <p>Please provide login credentials <img src="sres:busy.png">:</p>
+        <form>
+            <label>Email</label><input name="email" type="text" />
+            <label>Password</label><input name="password" type="password" />
+        </form>
+    <p #error style="color:red; height:1.4em;"></p>
+</script>
+
+<script type="text/html" #msg-box-content>
+    <style>
+        form { flow:row(label,input); border-spacing:10dip; }
+        form > * { vertical-align:baseline; }
+        form > label { horizontal-align:right; }
+        #error { left: 15px; }
+    </style>
+    <p>Please provide login credentials <img src="sres:busy.png">:</p>
+    <form>
+        <label>Email</label><input name="email" type="text" />
+        <label>Password</label><input name="password" type="password" />
+        <label>License key</label><input name="license" type="text" />
+    </form>
+    <p #error style="color:red; height:1.4em;"></p>
+</script>

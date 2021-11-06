@@ -1,0 +1,137 @@
+#analysisList {
+    top: 5%;
+    left: 12%;
+    width: 50%;
+    height: 20%;
+    overflow-x: auto;
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+
+.computedWav {
+    margin-top: 100%;
+    display: inline-block;
+    text-decoration: none;
+    width: 40%;
+    height: auto;
+}
+
+.reference {
+    padding-left: 5%;
+    width: 15%;
+}
+
+#analysisList a div figcaption {
+    color: #2B2B2B;
+    text-decoration: none;
+}
+
+#analysisList a div {
+    background-color: white;
+}
+
+#pdfLoader {
+    top: 5%;
+    left: 68%;
+    width: 30%;
+    height: 90%;
+    overflow: auto;
+    font-size: 20px;
+    position: absolute;
+    vertical-scrollbar: my-v-scrollbar;
+}
+
+@set my-v-scrollbar
+{
+    .base,
+    .next-page,
+    .base { width: 0px; }
+    .next { display:none; }
+    .prev { display:none; }
+    .base:disabled { background: #aaa; }
+    .corner { background: transparent; }
+    .prev-page { background:white; border-left:1px solid #AAA; }
+}
+
+.pdf {
+}
+
+.liner {
+    position: absolute;
+    border: 1px solid #c8c8c8;
+}
+
+.horizontal {
+    width: 53%;
+    height: 0%;
+    top: 30%;
+    left: 12%;
+}
+
+.vertical {
+    width: 0%;
+    height: 90%;
+    top: 5%;
+    left: 65%;
+}
+
+.container {
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    margin-right: 10%;
+    display: inline-block;
+}
+
+.container figcaption {
+    color: #2B2B2B;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.oscillogram {
+    left: 38px;
+    width: 200px;
+    height: 45px;
+    position: relative;
+    background-color: white;
+    border: 1px solid #000000;
+    background-size: 110% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 10px 10px 0;
+}
+
+.progress {
+    width: 0%;
+    height: 45px;
+    opacity: 0.5;
+    position: absolute;
+    background-color: #43BCB5;
+}
+
+.play, .pause {
+    width: 50px;
+    top: -47.5px;
+    height: 50px;
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 50px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    background-size: 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.play {
+    background-image: url('../resources/play.svg');
+}
+
+.pause {
+    background-image: url('../resources/pause.svg');
+}

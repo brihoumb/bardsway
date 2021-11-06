@@ -1,0 +1,57 @@
+<html window-icon="../resources/icon.png" window-resizable>
+    <head>
+        <title>Bard's Way</title>
+        <link rel="stylesheet" href="../style/main.css">
+        <link rel="stylesheet" href="../style/sidebar.css">
+        <link rel="stylesheet" href="../style/options.css">
+    </head>
+    <body>
+        <div class="sidenav">
+            <a href="#">
+                <img src="../resources/logo.png" class="logo" alt="nav_logo"/>
+            </a>
+            <a href="./home.html" #home class="inactive">
+                <img src="../resources/music_w.svg" alt="accueil"/>
+                <br/>ANALYSIS
+            </a>
+            <a href="./results.html" #results class="inactive">
+                <img src="../resources/check_w.svg" alt="resultats"/>
+                <br/>RESULTS
+            </a>
+            <a href="#" id="options" class="active" class="last">
+                <img src="../resources/gear_b.svg" alt="options"/>
+                <br/>OPTIONS
+            </a>
+        </div>
+
+        <div id="main">
+            <p id="titffmpeg">Path to ffmpeg :</p>
+            <input id="locffmpeg" readonly>
+            <a href="#" id="brffmpeg">
+                <img src="../resources/file_bk.svg" alt="file"/>
+            </a>
+
+            <p id="titmodelS">Path to Spleeter Models :</p>
+            <input id="locmodelS" readonly>
+            <a href="#" id="brmodelS">
+                <img src="../resources/file_bk.svg" alt="file"/>
+            </a>
+
+            <p id="titmodelR">Path to Note Recognition Models :</p>
+            <input id="locmodelR" readonly>
+            <a href="#" id="brmodelR">
+                <img src="../resources/file_bk.svg" alt="file"/>
+            </a>
+
+            <p id="titresult">Path to Results :</p>
+            <input id="locresult" readonly>
+            <a href="#" id="brresult">
+                <img src="../resources/file_bk.svg" alt="file"/>
+            </a>
+        </div>
+        <div id="licenseDate">License key expiration date: </div>
+        <include src="login_popup.html"/>
+        <script type="text/tiscript" src="../script/login_popup.tis"></script>
+        <script type="text/tiscript" src="../script/options.tis"></script>
+    </body>
+</html>

@@ -1,0 +1,82 @@
+let folder = "";
+let configPath = view.loadConfig();
+let configCredentials = view.loadCredentials();
+
+$(#locffmpeg).value = configPath[0];
+$(#locmodelS).value = configPath[2];
+$(#locmodelR).value = configPath[1];
+$(#locresult).value = configPath[3];
+
+function self.ready() {
+  if (configCredentials.email != "" && configCredentials.password != "") {
+    let expiration = view.getExpiration();
+    if (expiration != 'Unauthorized' && expiration > (Math.round((new Date().valueOf())/1000.0)+3600)) {
+      display_date(expiration);
+      return;
+    } else if (expiration != 'Unauthorized' && expiration <= (Math.round((new Date().valueOf())/1000.0)+3600)) {
+      request_key();
+      display_date(expiration);
+      return;
+    }
+  }
+  login();
+  configCredentials = view.loadCredentials();
+  display_date(configCredentials.expirationDate);
+};
+
+function display_date(epoch_date) {
+  if (epoch_date != "" && epoch_date != 'Unauthorized') {
+    $(#licenseDate).text += new Date(epoch_date * 1000.0).toGMTString() + '+1';
+  }
+}
+
+event click $(#brffmpeg) {
+    folder = view.selectFolder(#open)
+    if (folder != "" && folder != undefined) {
+        folder = URL.decode(URL.toPath(folder));
+        if (view.platform() === "Windows") {
+            folder = folder.replace('/', '\\');
+        }
+        $(#locffmpeg).value = folder;
+        view.updateConfig(folder, "ffmpeg");
+        folder = "";
+    }
+}
+
+event click $(#brmodelS) {
+    folder = view.selectFolder(#open)
+    if (folder != "" && folder != undefined) {
+        folder = URL.decode(URL.toPath(folder));
+        if (view.platform() === "Windows") {
+            folder = folder.replace('/', '\\');
+        }
+        $(#locmodelS).value = folder;
+        view.updateConfig(folder, "spleeter");
+        folder = "";
+    }
+}
+
+event click $(#brmodelR) {
+    folder = view.selectFolder(#open)
+    if (folder != "" && folder != undefined) {
+        folder = URL.decode(URL.toPath(folder));
+        if (view.platform() === "Windows") {
+            folder = folder.replace('/', '\\');
+        }
+        $(#locmodelR).value = folder;
+        view.updateConfig(folder, "rdn");
+        folder = "";
+    }
+}
+event click $(#brresult) {
+    folder = view.selectFolder(#open)
+    if (folder != "" && folder != undefined) {
+        folder = URL.decode(URL.toPath(folder));
+        if (view.platform() === "Windows") {
+            folder = folder.replace('/', '\\');
+        }
+        $(#locresult).value = folder;
+        view.updateConfig(folder, "result");
+        folder = "";
+    }
+}

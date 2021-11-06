@@ -1,0 +1,143 @@
+let playing;
+let playing_name;
+let playing_element = [];
+
+(() => {
+  const list = view.listDirs();
+
+  for(let el in list) {
+    const img = new Element('img');
+    const reference = new Element('a');
+    const container = new Element('div');
+    const figcaption = new Element('figcaption');
+    const figcaption2 = new Element('figcaption');
+
+    img.attributes['alt'] = el;
+    reference.attributes['href'] = el;
+    figcaption.text = el.substring(0, 19);
+    img.attributes['class'] = 'computedWav';
+    container.attributes['class'] = 'reference';
+    img.attributes['src'] = '../resources/note_bk.svg';
+    figcaption2.text = (el.substring(19) === undefined) ? '' : el.substring(19);
+
+    container.append(img);
+    container.append(figcaption);
+    container.append(figcaption2);
+    reference.append(container);
+    $(#analysisList).append(reference);
+  }
+})();
+
+const createWavs = (list, music_name) => {
+  $(#wavLoader).clear();
+  for(let el in list) {
+    const subcontainer = new Element('div');
+    const progress = new Element('div');
+    const music = new Element('audio');
+    const button = new Element('button');
+    const container = new Element('div');
+    const figcaption = new Element('figcaption');
+
+    figcaption.text = el.slice(0, -5);
+    button.attributes['class'] = 'play';
+    button.attributes['id'] = el;
+    music.attributes['type'] = 'audio/wav';
+    container.attributes['class'] = 'container';
+    subcontainer.attributes['class'] = 'oscillogram';
+    music.attributes['src'] = view.getAudioPath(music_name + '/' + el);
+    progress.attributes["class"] = 'progress';
+    subcontainer.style["background-image"] = 'url(' + view.retrieveOscillogram(music_name + '/' + el) + ')';
+
+    button.append(music);
+    container.append(figcaption);
+    subcontainer.append(progress);
+    container.append(subcontainer);
+    container.append(button);
+    $(#wavLoader).append(container);
+  }
+};
+
+event click $(a[href]) (ev) {
+  if (this.attributes['href'].slice(-5) === '.html' || this[0][1] === null) {
+    if (playing !== undefined) {
+      pause(playing_element[playing_element.length-1]);
+      playing_element[playing_element.length-1].selectParent('div')[1][0].style['width'] = '0%';
+      playing = undefined;
+    }
+    return;
+  } else {
+    ev.preventDefault()
+    this[0][1].style['color'] = '#43BCB5';
+    this[0][2].style['color'] = '#43BCB5';
+    this[0][0].attributes['src'] = '../resources/note_b.svg';
+    for(let child in $(#analysisList)) {
+      if (child.attributes['href'] !== this.attributes['href']) {
+        child[0][0].attributes['src'] = '../resources/note_bk.svg';
+        child[0][1].style['color'] = '#2B2B2B';
+        child[0][2].style['color'] = '#2B2B2B';
+      }
+    }
+    const list = view.listFiles(this.attributes['href']);
+    createWavs(list, this.attributes['href']);
+  }
+};
+
+self.timer(0.5s, () => {
+  let audio_element = playing_element[playing_element.length-1]
+  if (playing === undefined) {
+    return true;
+  }
+  if (playing.status === undefined) {
+    pause(audio_element);
+    audio_element.selectParent('div')[1][0].style['width'] = '0%';
+    playing = undefined;
+    return true;
+  }
+  if (playing_element.length >= 1 && audio_element.attributes['class'] === 'pause') {
+    if (playing.status !== undefined)
+      audio_element.selectParent('div')[1][0].style['width'] = (playing.progress * 100).toString() + '%';
+  }
+  return true;
+});
+
+function play(audio_element) {
+  audio_element.attributes['class'] = 'pause';
+  if (playing !== undefined && playing.status !== undefined) {
+    playing.pause();
+  }
+  if (playing_name === audio_element[0].attributes['src'] && playing !== undefined) {
+    playing.play();
+  } else {
+    playing_name = audio_element[0].attributes['src'];
+    playing = view.audio(audio_element[0].attributes['src']).play();
+  }
+}
+
+function pause(audio_element) {
+  audio_element.attributes['class'] = 'play';
+  if (playing !== undefined && playing_name === audio_element[0].attributes['src']) {
+    if (playing.progress >= 0.9) {
+      playing.stop();
+    } else {
+      playing.pause();
+    }
+  }
+}
+
+event click $(button) (ev) {
+  ev.preventDefault()
+  if (playing_element.length == 0 || playing_element[playing_element.length-1].attributes['id'] != this.attributes['id'])
+    playing_element.push(this);
+  for (let (index, el) in playing_element) {
+    if (el.attributes['class'] === 'pause' && el != this) {
+      pause(el);
+      el.selectParent('div')[1][0].style['width'] = '0%';
+      playing_element.splice(index, 1);
+    }
+  }
+  if (this.attributes['class'] === 'play') {
+    play(this);
+  } else {
+    pause(this);
+  }
+};

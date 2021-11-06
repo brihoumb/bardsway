@@ -1,0 +1,54 @@
+<html window-icon="../resources/icon.png" window-resizable>
+    <head>
+        <title>Bard's Way</title>
+        <link rel="stylesheet" href="../style/main.css">
+        <link rel="stylesheet" href="../style/home.css">
+        <link rel="stylesheet" href="../style/sidebar.css">
+    </head>
+    <body>
+        <div class="sidenav">
+            <a href="#">
+                <img src="../resources/logo.png" class="logo" alt="nav_logo"/>
+            </a>
+            <a href="#" #home class="active">
+                <img src="../resources/music_b.svg" alt="accueil"/>
+                <br/>ANALYSIS
+            </a>
+            <a href="./results.html" #results class="inactive">
+                <img src="../resources/check_w.svg" alt="resultats"/>
+                <br/>RESULTS
+            </a>
+            <a href="./options.html" #options class="inactive last">
+                <img src="../resources/gear_w.svg" alt="options"/>
+                <br/>OPTIONS
+            </a>
+        </div>
+        <div id="main">
+            <div class="header">
+                <div class="container">
+                  <div class="progress progress-moved">
+                    <div id="progress-bar"></div>
+                  </div>
+                </div>
+
+                <div class="filePath" id="pathWav">Which music do you want to treat?</div>
+
+                <a href="#" id="loadWav">
+                    <img src="../resources/file_b.png" id="loadWavPic"/>
+                    <span>CHOOSE YOUR SONG</span>
+                </a>
+
+                <a href="#" id="launch">
+                    <img src="../resources/rocket_n.png" id="launchPic"/>
+                    <span>START ANALYSIS</span>
+                </a>
+            </div>
+            <div id="outSpleeter" class="out"></div>
+            <div id="outEmul" class="out"></div>
+            <div id="outError" class="out"></div>
+        </div>
+        <include src="login_popup.html"/>
+        <script type="text/tiscript" src="../script/login_popup.tis"></script>
+        <script type="text/tiscript" src="../script/home.tis"></script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+@set my-v-scrollbar
+{
+    .base,
+    .next-page,
+    .base { width: 0px; }
+    .next { display:none; }
+    .prev { display:none; }
+    .base:disabled { background: #aaa; }
+    .corner { background: transparent; }
+    .prev-page { background:white; border-left:1px solid #AAA; }
+}
+
+.header a {
+    top: 5%;
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    text-decoration: none;
+}
+
+#loadWav {
+    left: 80%;
+    color: #43BCB5;
+}
+
+#launch {
+    left: 87%;
+    color: #2B2B2B;
+}
+
+#loadWav span, #launch span {
+    font-size: 0.8vw;
+    text-align: center;
+}
+
+#loadWavPic, #launchPic {
+    width: 90%;
+    height: auto;
+}
+
+.filePath {
+    top: 5%;
+    left: 13%;
+    width: 60%;
+    height: 5%;
+    padding: 1% 0;
+    color: #43BCB5;
+    font-size: 2vw;
+    margin-left: 2%;
+    position: absolute;
+    text-align: center;
+}
+
+.container {
+    top: 5%;
+    left: 15%;
+    width: 60%;
+    height: 8%;
+    position: absolute;
+    background-image: url('../resources/progress.svg');
+    background-size: 100% 100%;
+}
+
+.progress-moved #progress-bar {
+  width: 0%;
+  background-color: #43BCB5;
+}
+
+#progress-bar {
+    top: 20%;
+    left: 0.5%;
+    height: 60%;
+    position: absolute;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+}
+
+#outSpleeter {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 38%;
+    height: 40%;
+    background: #1D1D1D;
+    border-radius: 15px;
+    color: white;
+    overflow: auto;
+    vertical-scrollbar: my-v-scrollbar;
+    font-size: 1.8vw;
+}
+
+#outEmul {
+    position: absolute;
+    top: 20%;
+    left: 57%;
+    width: 38%;
+    height: 40%;
+    background: #1D1D1D;
+    border-radius: 15px;
+    color: white;
+    overflow: auto;
+    vertical-scrollbar: my-v-scrollbar;
+    font-size: 1.8vw;
+}
+
+#outError {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    width: 80%;
+    height: 30%;
+    background: #1D1D1D;
+    border-radius: 15px;
+    color: white;
+    overflow: auto;
+    vertical-scrollbar: my-v-scrollbar;
+    font-size: 1.8vw;
+}
+
+.out {
+    padding-left: 5px;
+}
+
+.out p {
+    line-height: 1.2em;
+    margin: 0.2em 0;
+}
+
+#inst {
+    position: absolute;
+    top: 90%;
+    left: 96%;
+}

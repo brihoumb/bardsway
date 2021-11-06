@@ -1,0 +1,51 @@
+#main input {
+    position: absolute;
+    left: 35%;
+    width: 55%;
+    height: 30px;
+}
+
+#main a {
+    left: 92%;
+    width: 60%;
+    color: #2B2B2B;
+    position: absolute;
+    text-decoration: none;
+}
+
+#main p {
+    left: 10%;
+    width: 60%;
+    color: #2B2B2B;
+    font-weight: bold;
+    position: absolute;
+    text-decoration: none;
+}
+
+#titffmpeg, #locffmpeg, #brffmpeg {
+    top: 10%;
+}
+
+#titmodelR, #locmodelR, #brmodelR {
+    top: 20%;
+}
+
+#titmodelS, #locmodelS, #brmodelS {
+    top: 30%;
+}
+
+#titresult, #locresult, #brresult {
+    top: 40%;
+}
+
+img[alt="file"] {
+    width: 5%;
+    height: auto;
+}
+
+#licenseDate {
+    top: 95%;
+    left: 15%;
+    position: absolute;
+    display: inline-block;
+}
