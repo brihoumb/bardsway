@@ -1,0 +1,12 @@
+FROM bardsway/bardsway:latest
+
+LABEL version="2.0.0"
+LABEL Vendor="Bard's Way"
+LABEL maintainer="benjamin.brihoum"
+LABEL description="Bard's Way unittest container for Gitlab pipeline."
+
+WORKDIR /
+
+COPY scripts/ /scripts/
+
+ENTRYPOINT ["/scripts/entrypoint.sh"]

@@ -1,15 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-'''
-Main of the Bard's way software.
-'''
-
 import os
 import sys
 import logging
 from io import StringIO
-from gui.src.main import start_sciter
-
+from software.src.main import start_sciter
 
 if __name__ == '__main__':
     stream = StringIO()

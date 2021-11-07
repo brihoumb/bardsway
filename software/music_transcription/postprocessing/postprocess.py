@@ -1,3 +1,5 @@
+import numpy as np
+import pickle
 from midiutil.MidiFile import MIDIFile
 
 
@@ -40,3 +42,14 @@ def roll2midi(tab, tempo=120, output="out.mid"):
 
     with open(output, 'wb') as outf:
         mf.writeFile(outf)
+
+
+def main():
+    with open('roll_test.p', 'rb') as handle:
+        tab = pickle.load(handle)
+    # print(tab)
+    roll2midi(tab, 120, "test.mid")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,10 @@
+FROM nginx:alpine
+
+LABEL version="1.0.0"
+LABEL vendor="Bard's Way"
+LABEL maintainer="benjamin.brihoum"
+LABEL description="Bard's Way front-end container."
+
+WORKDIR /usr/share/nginx/html
+
+EXPOSE 80

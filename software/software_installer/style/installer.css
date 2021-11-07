@@ -1,0 +1,118 @@
+@set my-v-scrollbar {
+    .base,
+    .next-page,
+    .base { width: 0px; }
+    .next { display: none; }
+    .prev { display: none; }
+    .base:disabled { background: #aaa; }
+    .corner { background: transparent; }
+    .prev-page { background: white; border-left: 1px solid #AAA; }
+}
+
+html {
+    margin: 0;
+    background: no-repeat center bottom url("../resources/mountain.svg");
+    background-size: 100%;
+}
+
+main {
+    padding: 0px 10px;
+    margin-left: 120px; /* Same as the width of the sidebar */
+}
+
+#logo {
+    width: 20%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+}
+
+#logger {
+    top: 48%;
+    left: 5%;
+    width: 75%;
+    height: 47%;
+    color: #FFF;
+    overflow: auto;
+    font-size: 1.8vw;
+    padding-left: 5px;
+    position: absolute;
+    border-radius: 15px;
+    background: #1D1D1D;
+    vertical-scrollbar: my-v-scrollbar;
+}
+
+#logger p {
+    margin: 0.2em 0;
+    line-height: 1.2em;
+}
+
+.nav {
+    left: 87%;
+    color: #2B2B2B;
+    font-size: 1vw;
+    position: absolute;
+    text-decoration: none;
+}
+
+.nav img {
+    width: 6%;
+    height: auto;
+}
+
+.nav span {
+    font-size: 1.8vw;
+}
+
+#dest {
+    top: 37%;
+}
+
+#install {
+    top: 62%;
+}
+
+#uninstall {
+    top: 82%;
+}
+
+.filePath {
+    top: 37%;
+    left: 3%;
+    width: 75%;
+    height: 8%;
+    padding: 1% 0;
+    font-size: 3vw;
+    color: #43BCB5;
+    margin-left: 2%;
+    position: absolute;
+    text-align: center;
+}
+
+.container {
+    top: 37%;
+    left: 5%;
+    width: 75%;
+    height: 8%;
+    position: absolute;
+    background-image: url('../resources/progress.svg');
+    background-size: 100% 100%;
+}
+
+.progress-moved #progress-bar {
+  width: 0%;
+  background-color: #43BCB5;
+}
+
+#progress-bar {
+    top: 20%;
+    left: 0.5%;
+    height: 60%;
+    position: absolute;
+    border-radius: 30px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    transition: 0.4s linear;
+    transition-property: width, background-color;
+}

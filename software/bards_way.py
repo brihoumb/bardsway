@@ -9,8 +9,8 @@ import subprocess
 
 from filetype import guess
 
-from gui.src.options import get_field
 from sub_module.ffmpeg_call import FFMPEG
+from software.src.options import get_field
 from sub_module.spleeter_call import Spleeter
 from music_transcription.entrypoint import entrypoint
 from sub_module.tools import check_create_dir, get_path

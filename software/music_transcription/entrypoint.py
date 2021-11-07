@@ -4,7 +4,7 @@ import shutil
 import logging
 
 from music_transcription import download
-from gui.src.options import get_field
+from software.src.options import get_field
 from music_transcription.model import TranscriptionModel
 
 

@@ -1,0 +1,11 @@
+FROM bardsway/bardsway:latest
+
+LABEL version="1.0.0"
+LABEL Vendor="Bard's Way"
+LABEL maintainer="benjamin.brihoum"
+LABEL description="Bard's Way note recognition training container."
+
+WORKDIR /
+
+CMD ["python", "/usr/share/rdn/model.py", "-d", "/usr/share/data/data.p"]
+

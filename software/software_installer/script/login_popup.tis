@@ -1,0 +1,32 @@
+function request_key() {
+  let data = {email:"", password:"", license:""};
+  function onClose(root, btn) {
+    if (btn == #cancel)
+      return true;
+    data = root.$(form).value;
+    if (!data.password || !data.email || !data.license) {
+      root.$(p#error).text = "Neither name, password nor license key can be empty";
+      return false;
+    }
+    view.updateCredentials(data.email, data.password);
+    const expiration = view.getExpiration(data.license)
+    if (expiration == "Unauthorized") {
+      root.$(p#error).text = "Unauthorized";
+      return false;
+    } else if (!expiration || expiration <= (Math.round((new Date().valueOf())/1000.0)+3600)) {
+      root.$(p#error).text = "License key expired";
+      return false;
+    }
+    return true;
+  }
+
+  const result = view.msgbox {
+    title: "Login",
+    content:$(#msg-box-content).text,
+    onClose: onClose,
+    buttons:[{id:#login, text:"Login", accesskey:"^L"}]
+  };
+  if (result == #login)
+    return true;
+  return false;
+}

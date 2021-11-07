@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  bardsway:
+    build:
+      context: .
+      dockerfile: Dockerfile.bardsway
+    container_name: bardsway
+
+  ci:
+    build:
+      context: .
+      dockerfile: Dockerfile.ci
+    container_name: ci
+    depends_on:
+      - bardsway

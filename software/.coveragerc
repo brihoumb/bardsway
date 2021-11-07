@@ -1,0 +1,19 @@
+[run]
+omit = *_unittest.py
+       sub_module/gui.py
+       __main__.py
+       */__main__.py
+       installer_main.py
+       installer/.*
+       music_transcription/*
+       music_transcription/.*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    print(.*)
+    logging.*
+    sys.stdout.write(.*)
+    if (.*) 'Windows':
+    subprocess.check_call(.*)

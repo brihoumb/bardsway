@@ -1,0 +1,14 @@
+FROM node:alpine
+
+LABEL version="1.0.0"
+LABEL vendor="Bard's Way"
+LABEL maintainer="benjamin.brihoum"
+LABEL description="Bard's Way back-end container."
+
+WORKDIR /backend
+
+COPY scripts/back-entrypoint.sh /tmp
+
+EXPOSE 3000
+
+ENTRYPOINT ["/tmp/back-entrypoint.sh"]

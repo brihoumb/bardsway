@@ -1,0 +1,66 @@
+let old = "";
+let folder = "";
+let started = false;
+let verified = false;
+
+event click $(#dest) {
+  if (started) {
+    return;
+  }
+  old = folder;
+  folder = view.selectFolder(#open);
+  if (!started && folder != "" && folder != undefined) {
+    folder = URL.decode(URL.toPath(folder));
+    view.selectInstallPath(folder);
+    $(#filePath).text = folder.split(/[\\\/]/).pop();
+    $(#filePic).attributes["src"] = "../resources/file_bk.svg";
+    $(#installPic).attributes["src"] = "../resources/rocket_bl.svg";
+    $(#logger).clear();
+  } else {
+    folder = old;
+  }
+}
+
+event click $(#install) {
+  if (!started && folder != "" && folder != undefined) {
+    view.initInstall()
+    verified = request_key();
+    if (verified) {
+      started = true;
+      $(#filePath).text = '';
+      self.timer(1s, () => {
+        if (($(#progress-bar).style['width'] == "100pr" || $(#progress-bar).style['width'] == "99pr") && started) {
+          started = false;
+          $(#logger).clear();
+          $(#progress-bar).style['width'] = '0%';
+          $(#filePath).text = 'Select default path';
+          $(#filePic).attributes["src"] = "../resources/file_b.svg";
+          $(#installPic).attributes["src"] = "../resources/rocket_n.svg";
+        }
+        return true;
+      });
+      view.install();
+    } else {
+      $(#progress-bar).style['width'] = '0%';
+      $(#logger).clear();
+    }
+  } else if (folder == "" || folder == undefined) {
+    $(#filePath).text = 'Please select where to install Bard\'s Way';
+  }
+}
+
+event click $(#uninstall) {
+  if (folder == "") {
+    $(#filePath).text = 'Please select where Bard\'s Way is installed';
+  } else {
+    view.uninstall(folder);
+  }
+}
+
+event complete() {
+  view.minSize = (720, 540);
+  view.maxSize = (1920, 1440);
+  view.windowAspectRatio = 4.0/3.0;
+  let (x,y,w,h) = view.box(#rectw,#client,#screen);
+  view.move(x, y, 720, 540, true);
+}

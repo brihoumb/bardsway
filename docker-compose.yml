@@ -1,0 +1,45 @@
+version: "3.8"
+services:
+  spleeter:
+    user: root
+    container_name: spleeter
+    image: researchdeezer/spleeter:gpu
+    volumes:
+       - /datadisk/spleeter_cedric/spleeter/.:/usr/share/spleeter
+    stdin_open: true
+    tty: true
+    command: train -p /usr/share/spleeter/configs/testone_epoch.json -d /usr/share/spleeter
+
+
+  backend:
+    network_mode: host
+    build:
+      context: containers
+      dockerfile: Dockerfile.backend
+    container_name: bardsway_backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./www/back/:/backend
+
+  frontend:
+    build:
+      context: containers
+      dockerfile: Dockerfile.frontend
+    container_name: bardsway_frontend
+    ports:
+      - target: 80
+        published: 8080
+        protocol: tcp
+        mode: host
+    volumes:
+      - ./www/front/:/usr/share/nginx/html
+
+  train_note_recognition:
+    volumes:
+      - ./algorithm/music_transcription/:/usr/share/rdn
+      - /datadisk/music_transcritpion/:/usr/share/data
+    build:
+      context: containers
+      dockerfile: Dockerfile.note_recognition
+    container_name: bardsway_note_recognition_train

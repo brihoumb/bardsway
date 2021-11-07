@@ -1,0 +1,31 @@
+<html window-icon="../resources/icon.png" window-resizable>
+    <head>
+        <title>Bard's Way</title>
+        <link rel="stylesheet" href="../style/installer.css">
+    </head>
+    <body>
+        <img src="../resources/logo.png" id="logo" alt="nav_logo"/>
+        <div class="container">
+            <div class="progress progress-moved">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+        <div class="filePath" id="filePath">Select default path</div>
+        <div id="logger"></div>
+        <a href="#" class="nav" id="dest">
+            <img src="../resources/file_b.svg" id="filePic"/>
+            <br/><span>Destination</span>
+        </a>
+        <a href="#" class="nav" id="install">
+            <img src="../resources/rocket_n.svg" id="installPic"/>
+            <br/><span>Install</span>
+        </a>
+        <a href="#" class="nav" id="uninstall">
+            <img src="../resources/uninstall.svg" id="uninstallPic"/>
+            <br/><span>Uninstall</span>
+        </a>
+        <include src="login_popup.html"/>
+        <script type="text/tiscript" src="../script/login_popup.tis"></script>
+        <script type="text/tiscript" src="../script/installer.tis"></script>
+    </body>
+</html>

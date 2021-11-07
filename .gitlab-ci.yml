@@ -1,0 +1,59 @@
+image: bardsway/ci:latest
+
+check_norme:
+  stage: build
+  script:
+    - ./tools/check_norme.sh
+    - ./tools/check_norme.sh count
+  coverage: '/^TOTAL:\s+(\d+)$/'
+
+test_bardsway:
+  stage: test
+  before_script:
+    - ./tools/exec_unittest.sh move
+  script:
+    - cd ./algorithm/
+    - python -m unittest bardsway_unittest.py
+  after_script:
+    - ./tools/exec_unittest.sh remove
+
+test_spleeter:
+  stage: test
+  before_script:
+    - ./tools/exec_unittest.sh move
+  script:
+    - cd ./algorithm/
+    - python -m unittest spleeter_unittest.py
+  after_script:
+    - ./tools/exec_unittest.sh remove
+
+test_ffmpeg:
+  stage: test
+  before_script:
+    - ./tools/exec_unittest.sh move
+  script:
+    - cd ./algorithm/
+    - python -m unittest ffmpeg_unittest.py
+  after_script:
+    - ./tools/exec_unittest.sh remove
+
+test_tools:
+  stage: test
+  before_script:
+    - ./tools/exec_unittest.sh move
+  script:
+    - cd ./algorithm/
+    - python -m unittest tools_unittest.py
+  after_script:
+    - ./tools/exec_unittest.sh remove
+
+coverage:
+  stage: deploy
+  before_script:
+    - ./tools/exec_unittest.sh move
+  script:
+    - cd ./algorithm/
+    - pytest --cov=. --cov-config=.coveragerc *_unittest.py
+  after_script:
+    - ./tools/exec_unittest.sh remove
+  coverage: '/^TOTAL\s+\d+\s+\d+\s+(\d+\%)$/'

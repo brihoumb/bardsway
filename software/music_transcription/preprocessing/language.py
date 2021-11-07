@@ -1,9 +1,8 @@
-import sys
-
-import numpy as np
 from mido import MidiFile, bpm2tempo, tempo2bpm, second2tick
+import sys
+import numpy as np
 
-
+# Full array printing
 np.set_printoptions(threshold=sys.maxsize)
 
 
@@ -16,6 +15,15 @@ def get_tempo(tracks, default=500000):
             except AttributeError as e:
                 pass
     return tempo
+
+
+def get_timing(filename, frequency):
+    mid = MidiFile(filename)
+    tempo = get_tempo(mid.tracks)
+    bpm = tempo2bpm(tempo)
+    tpb = frequency * 60 / bpm
+    print(f"bpm: {bpm}\tfreq: {frequency}\ttpb: {tpb}")
+    return bpm, tpb
 
 
 def get_fac(midi, target_length):
@@ -74,3 +82,12 @@ def midi2roll(fname, target_length):
         notes = track2notes(track)
         roll = notes2roll(notes, target_length, fac)
         return roll
+
+
+def main():
+    roll = midi2roll(sys.argv[1], 1000)
+    print(roll)
+
+
+if __name__ == '__main__':
+    main()
